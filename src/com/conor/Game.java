@@ -3,12 +3,25 @@ package com.conor;
 public class Game {
 
     public static void main(String[] args) {
-        Card c1, c2;
 
-        c1 = new Card(Value.ACE, Suit.HEARTS);
-        c2 = new Card(Value.JACK, Suit.HEARTS);
+        //Creating deck
+        Deck d1 = new Deck();
+        d1.populateDeck();
+        d1.shuffle();
 
-        System.out.println(c1.toString() + "\n" + c2.toString() );
+        //Create hand
+        Hand h1, h2;
+        h1 = new Hand();
+        h2 = new Hand();
+        Hand[] hands = {h1, h2};
+
+        //Deal cards to hands
+        d1.deal(hands, 7); //2nd number is total cards in hand
+
+        //Show players hands
+        for (int i= 0; i < hands.length; i++) {
+            System.out.println(hands[i].showHand());
+        }
 
 
     }

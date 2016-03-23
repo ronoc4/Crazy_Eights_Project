@@ -10,11 +10,13 @@ public class Card {
 
     private Suit suit;
     private Value value;
+    public boolean isFaceUp;
 
     //Contrsuctor for card class
     public Card(Value value, Suit suit) {
         this.value = value;
         this.suit = suit;
+        isFaceUp = true;
     }
 
     //Public methods
@@ -22,14 +24,30 @@ public class Card {
         return suit.printSuitText();
     }
 
+    //Ability for card to get suit as rank string
+    public String printSuit() {
+        return suit.printSuitText();
+    }
+
     public int getValue() {
         return value.getValueInt();
     }
 
+
+    public void flipCard() {
+        isFaceUp = !isFaceUp; //Reverse value of card
+    }
+
+    @Override
     public String toString() {
         String str = "";
-        str += value.printValue() + " of " +
-                suit.printSuitText();
+        if (!isFaceUp) {
+            //TODO check to make sure this is valid
+            str += value.printValue() + " of " +
+                    suit.printSuitText();
+        } else {
+            str = "Card is face down";
+        }
         return str;
     }
 }
