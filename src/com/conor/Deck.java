@@ -13,8 +13,9 @@ public class Deck extends Hand{
         * For suits in suits
         * set card to card with values and suits
         * */
-        for(Suit suit: Suit.values()) {
+        for(Suit suit: Suit.values()) { //Enum reference: http://stackoverflow.com/questions/13659217/where-is-the-documentation-for-the-values-method-of-enum
             for(Value value :Value.values()) {
+
                 Card card = new Card(value, suit); //Create new card
                 card.flipCard(); //Flip card
                 this.add(card); //Add to card arraylist

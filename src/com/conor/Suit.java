@@ -10,10 +10,10 @@ public enum Suit {
     DIAMONDS("Diamonds"),
     CLUBS("Clubs");
 
-    //Final = contsent
+    //Final = constant
     private final String suitText;
 
-    //Contstructor
+    //Constructor
     private Suit (String suitText) {
         this.suitText = suitText;
     }

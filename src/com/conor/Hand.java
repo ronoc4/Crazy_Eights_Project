@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 //Super class to create deck
 public class Hand {
+
     //Create set of cards
     protected ArrayList<Card> cards;
 
